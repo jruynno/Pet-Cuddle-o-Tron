@@ -1,9 +1,30 @@
 # Pet-Cuddle-o-Tron
 
+### Description
 
+The Pet-Cuddle-o-Tron application is designed to send automated emails reminding pet owners to cuddle their pets. Users can set a countdown timer and a custom message, and the application will handle the rest. This project is perfect for learning how to build serverless applications using AWS, integrating Simple Email Service (SES), Lambda functions, Step Functions, API Gateway, and S3.
 
-## Stages
-### STAGE 1 - Configure Simple Email service
+### Features
+
+* Email Notifications: Sends custom email reminders.
+* Serverless Workflow: Utilizes AWS Step Functions to manage state transitions.
+* Dynamic Timer: Configurable countdown for reminders.
+* Static Web Frontend: Hosted on S3 with a simple UI for user interaction.
+
+### Technologies Used
+* AWS Simple Email Service (SES): For sending emails.
+* AWS Lambda: To handle backend logic and trigger email sending.
+* AWS Step Functions: For managing the state of the reminder workflow.
+* AWS API Gateway: To expose RESTful endpoints for the frontend.
+* AWS S3: Hosting the static frontend application.
+* Python 3.11: Backend code written in Python.
+* HTML, CSS, JavaScript: For the static frontend application.
+
+# Architecture
+![image](https://github.com/user-attachments/assets/ce0641af-722f-4616-867f-32b2ddd02d46)
+
+# STAGES
+## STAGE 1 - Configure Simple Email service
 ![alt text](Images/image.png)
 
 * Create 1st Email identity: **FROM**
@@ -27,7 +48,7 @@
 
 
 
-### STAGE 2 - Add an email lambda function to use SES to send emails for the serverless application
+## STAGE 2 - Add an email lambda function to use SES to send emails for the serverless application
 * Click 1-Click Deployment Link for the lambda role: [1-Click Deploy Link](https://learn-cantrill-labs.s3.amazonaws.com/aws-serverless-pet-cuddle-o-tron/lambdarolecfn.yaml)
 
 * Move to IAM console
@@ -92,7 +113,7 @@
 
 
 
-### STAGE 3 : Implement and configure the state machine, the core of the application
+## STAGE 3 : Implement and configure the state machine, the core of the application
 * Click 1-Click Deployment Link for the state machine role: [1-Click Deploy Link](https://learn-cantrill-labs.s3.amazonaws.com/aws-serverless-pet-cuddle-o-tron/statemachinerole.yaml)
 
     1. Once stack is completed, move to IAM console
@@ -167,7 +188,7 @@
 
 
 
-### STAGE 4 : Implement the API Gateway, API and supporting lambda function
+## STAGE 4 : Implement the API Gateway, API and supporting lambda function
 1. Move to Lambda console
     ![alt text](Images/image-26.png)
 
@@ -290,7 +311,7 @@
 
 
 
-### STAGE 5 : Implement the static frontend application and test functionality
+## STAGE 5 : Implement the static frontend application and test functionality
 1. Create the S3 Bucket
     * Move to S3 console
     ![alt text](Images/image-38.png)
@@ -408,6 +429,13 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
 ![alt text](Images/UpdatedImages/image-6.png)
 ![alt text](Images/UpdatedImages/image-7.png)
 
-* Ensure the api_lambda code is pasted correctly and the correct ARN is entered.
-* If you still encounter the same error in `Firefox`, try reopening the S3 static website link in `another browser`.
+1. Ensure the api_lambda code is pasted correctly and the correct ARN is entered.
+   
+2. If you still encounter the same error in `Firefox`, try reopening the S3 static website link in `another browser`.
 ![alt text](Images/UpdatedImages/image-16.png)
+
+
+#### Credits
+
+This project is based on the AWS Serverless Pet-Cuddle-o-Tron tutorial by Adrian Cantrill. His comprehensive guides and learning resources have been invaluable in building this application.
+
