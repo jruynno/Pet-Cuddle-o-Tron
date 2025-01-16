@@ -4,24 +4,24 @@
 
 ## Stages
 ### STAGE 1 - Configure Simple Email service
-![alt text](images/image.png)
+![alt text](Images/image.png)
 
 * Create 1st Email identity: **FROM**
     1. In configuration click `Identities` and click `Create Identities`
-    ![alt text](images/image-1.png)
+    ![alt text](Images/image-1.png)
     2. Under *Identity type* Select `Email Address`, Enter the email address that come **FROM** the Pet Cuddle o Tron Application, and click `Create identity`
-    ![alt text](images/image-2.png)
+    ![alt text](Images/image-2.png)
     3. Go to your email inbox and confirm that you are authorized to use the email address you entered
-    ![alt text](images/image-3.png)
+    ![alt text](Images/image-3.png)
 
 * Create 2nd Email identity: **TO**
     1. Follow steps 1-2 of `Create 1st Email identity: FROM`
         * Enter the email address that will delivered **TO**
-        ![alt text](images/image-4.png)
+        ![alt text](Images/image-4.png)
     2. Repeat step 3 of `Create 1st Email identity: FROM`
-        ![alt text](images/image-3.png)
+        ![alt text](Images/image-3.png)
 * Finally, check the 2 `Verified` under *Identity status*
-![alt text](images/image-5.png)
+![alt text](Images/image-5.png)
 
 
 
@@ -31,21 +31,21 @@
 * Click 1-Click Deployment Link for the lambda role: [1-Click Deploy Link](https://learn-cantrill-labs.s3.amazonaws.com/aws-serverless-pet-cuddle-o-tron/lambdarolecfn.yaml)
 
 * Move to IAM console
-![alt text](images/image-6.png)
+![alt text](Images/image-6.png)
     1. Under *Roles* and click *Role name* starting with **LAMBDAROLE-LambdaRole**
-    ![alt text](images/image-7.png)
+    ![alt text](Images/image-7.png)
         * check the `Trust relationships`: lambda assumes this role
-        ![alt text](images/image-8.png)
+        ![alt text](Images/image-8.png)
         * check the `Permissions` policies: this lambda function can interact with 3 services: 
             * SES, SNS, and STATE machines inside *step functions*
-        ![alt text](images/image-9.png)
+        ![alt text](Images/image-9.png)
         * It will also log all its logging diagnostics into CloudWatch Logs
-        ![alt text](images/image-10.png)
+        ![alt text](Images/image-10.png)
 
 * Move to Lambda console
-![alt text](images/image-11.png)
+![alt text](Images/image-11.png)
     1. Click `Create a function`
-    ![alt text](images/image-12.png)
+    ![alt text](Images/image-12.png)
     
     2. Configure the following:
         * Select `Author from scratch`
@@ -56,11 +56,11 @@
             * In the Existing role dropdown, select Lambdarole
             * Click `Create function`
             
-        ![alt text](images/image-13.png)
+        ![alt text](Images/image-13.png)
 
     3. Uder code
         * right click on `lambda_function.py` and click `open`
-        ![alt text](images/image-14.png)
+        ![alt text](Images/image-14.png)
         * replace the skeleton code with:
         * and replace the REPLACE_ME with the `1st Email identity: FROM`. mine is ynnoriveracloud+cuddleotron@gmail.com
 
@@ -85,10 +85,10 @@
         
 
         *  and click `deploy`
-        ![alt text](images/image-15.png)
+        ![alt text](Images/image-15.png)
 
         * copy and note down the Function ARN. Mine is: arn:aws:lambda:us-east-1:861276109659:function:email_reminder_lambda
-        ![alt text](images/image-16.png)
+        ![alt text](Images/image-16.png)
 
 
 
@@ -96,22 +96,22 @@
 * Click 1-Click Deployment Link for the state machine role: [1-Click Deploy Link](https://learn-cantrill-labs.s3.amazonaws.com/aws-serverless-pet-cuddle-o-tron/statemachinerole.yaml)
 
     1. Once stack is completed, move to IAM console
-    ![alt text](images/image-17.png)
+    ![alt text](Images/image-17.png)
         * Under `Roles`, Click Role name starting with *StateMachineRole* 
-        ![alt text](images/image-18.png)
+        ![alt text](Images/image-18.png)
         * Under `Trust relationships`, verify that it is allowed to assume role with the AWS service, states
-        ![alt text](images/image-19.png)
+        ![alt text](Images/image-19.png)
         * Click on `Permissions`
         verify that the permission of state machine can invoke the lambda functions and can directly interact with SNS
-        ![alt text](images/image-20.png)
+        ![alt text](Images/image-20.png)
 
     2. Move to Step Functions console
-    ![alt text](images/image-21.png)
+    ![alt text](Images/image-21.png)
 
         * Click `State machines`
         * Click `Create state machine`
         * Select `Blank`
-        ![alt text](images/image-22.png)
+        ![alt text](Images/image-22.png)
         * Click `Code`
             * Paste JSON file:
             * Replace the `EMAIL_LAMBDA_ARN` with: `arn:aws:lambda:us-east-1:861276109659:function:email_reminder_lambda` 
@@ -156,9 +156,9 @@
                 * Log level: `ALL`
             * Click `Create`
 
-        ![alt text](images/image-23.png)
+        ![alt text](Images/image-23.png)
 
-        ![alt text](images/image-24.png)
+        ![alt text](Images/image-24.png)
 
         * Locate and Copy `Arn`. Mine is `arn:aws:states:us-east-1:861276109659:stateMachine:PetCuddleOTron`
         ![alt text](Images/UpdatedImages/image-9.png)
@@ -169,7 +169,7 @@
 
 ### STAGE 4 : Implement the API Gateway, API and supporting lambda function
 1. Move to Lambda console
-    ![alt text](images/image-26.png)
+    ![alt text](Images/image-26.png)
 
     * Click `Create function`
     * Select `Author from scratch`
@@ -180,7 +180,7 @@
         * Select name starting `LAMBDAROLE` from the dropdodwn
         * Click `Create function`  
 
-     ![alt text](images/image-27.png)
+     ![alt text](Images/image-27.png)
     * Under Code, right click `lambda_function.py`, and click open
         * delete and replace skeleton code with: 
         * Replace YOUR_STATEMACHINE_ARN with ARN from statemachine. Mine is: `arn:aws:states:us-east-1:861276109659:stateMachine:PetCuddleOTron`
@@ -238,28 +238,28 @@
                         return int(obj)
                     return super(DecimalEncoder, self).default(obj)
         * Click `Deploy`
-        ![alt text](images/image-28.png)
+        ![alt text](Images/image-28.png)
 
 2. Move to API Gateway console
- ![alt text](images/image-29.png)
+ ![alt text](Images/image-29.png)
 
     * Create `REST API` by clicking `Build`
-    ![alt text](images/image-30.png)
+    ![alt text](Images/image-30.png)
         * Select New API
         * Under API name, Enter `petcuddleotron`
         * Select API endpoint type to `Regional`
         * Select `Create API`
-        ![alt text](images/image-31.png)
+        ![alt text](Images/image-31.png)
     * Create Resource
-    ![alt text](images/image-32.png)
+    ![alt text](Images/image-32.png)
         * Enter Resource name: `petcuddleotron`
         * Make sure that Configure as proxy resource is **NOT** ticked - this forwards everything as is, through to a lambda function, because we want some control, we DONT want this ticked.
         * Towards the bottom MAKE SURE TO **TICK** `Enable API Gateway CORS`. This relaxes the restrictions on things calling on our API with a different DNS name, it allows the code loaded from the S3 bucket to call the API gateway endpoint. If you DONT check this box, the API will fail
         * Click `Create resource`
-        ![alt text](images/image-33.png)
+        ![alt text](Images/image-33.png)
     * Create Method
         * click `Create method`
-        ![alt text](images/image-34.png)
+        ![alt text](Images/image-34.png)
         * Method type: `POST`
             * this method is what the front end part of the application will make calls to.
             * Its what the api_lambda will provide services for.
@@ -272,15 +272,15 @@
         * Lambda function: enter *api*, and select the arn with *api*
         * Integration timeout:` 29000` (default)
         * Click `Create method`
-        ![alt text](images/image-35.png)
+        ![alt text](Images/image-35.png)
     * Deploy API
         * click `Deploy API`
         * Stage: `New Stage`
         * Stage name and description: `prod`
         * Click `Deploy`
-    ![alt text](images/image-36.png)
+    ![alt text](Images/image-36.png)
     * Copy and note down `invoke URL`. Mine is: `https://i6uqq1em9e.execute-api.us-east-1.amazonaws.com/prod`
-    ![alt text](images/image-37.png)
+    ![alt text](Images/image-37.png)
 
 
 
@@ -293,7 +293,7 @@
 ### STAGE 5 : Implement the static frontend application and test functionality
 1. Create the S3 Bucket
     * Move to S3 console
-    ![alt text](images/image-38.png)
+    ![alt text](Images/image-38.png)
     * Click `Create bucket`
     * Enter Bucket name: petcuddleotron888
     * Untick `Block all public access`
@@ -301,7 +301,7 @@
     * Click `Create Bucket`
 2. Set the Bucket as public
     * Click the bucket
-    ![alt text](images/image-39.png)
+    ![alt text](Images/image-39.png)
     * Click the `Permissions` tab
         * In the `Bucket Policy`, click `Edit` 
         * Paste code below and replace `REPLACEME_PET_CUDDLE_O_TRON_BUCKET_ARN` with `Bucket ARN` (being careful NOT to include the /*)
@@ -322,11 +322,11 @@
             }
 
         * and `Save Changes`
-        ![alt text](images/image-40.png)
+        ![alt text](Images/image-40.png)
     
 3. Enable Static Hosting
     * click the bucket
-    ![alt text](images/image-41.png)
+    ![alt text](Images/image-41.png)
     * click `Properties` Tab
     * Under `Static Website Hosting`, click `edit`
         * Under `Static website hosting` select `enable`
@@ -380,6 +380,7 @@
     * Email: enter the **2nd Email address: TO**: `ynnoriveracloud+cuddlecustomer@gmail.com`
     * Click `Email Minion` button
 
+# OUTPUT
 FINALLY!
 ![alt text](Images/UpdatedImages/image-11.png)
 
