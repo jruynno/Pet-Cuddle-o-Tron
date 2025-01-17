@@ -437,5 +437,4 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
 
 #### Credits
 
-This project is based on the AWS Serverless Pet-Cuddle-o-Tron tutorial by Adrian Cantrill. His comprehensive guides and learning resources have been invaluable in building this application.
-
+This project is based on the AWS Serverless `Pet-Cuddle-o-Tron` tutorial from the `Solutions Architect Professional` course by `Adrian Cantrill`. Their comprehensive guides and learning resources have been instrumental in the development of this application.
