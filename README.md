@@ -425,7 +425,7 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
     ![alt text](Images/UpdatedImages/image-15.png)
 
 
-### Error Encountered:
+## Error Encountered:
 ![alt text](Images/UpdatedImages/image-6.png)
 ![alt text](Images/UpdatedImages/image-7.png)
 
@@ -433,6 +433,43 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
    
 2. If you still encounter the same error in `Firefox`, try reopening the S3 static website link in `another browser`.
 ![alt text](Images/UpdatedImages/image-16.png)
+
+
+
+## CleanUp
+
+1. Go to S3
+       Select the bucket,
+       Click `Empty`
+       Enter `permanently delete`, wait for the process to be donw
+       Click `delete`
+       Enter the `bucket name`
+       Click `Delete bucket`
+3. Go to API Gateway
+       Select `petcuddleotron`,
+       Click `Delete`
+       Enter `confirm`
+       Confirm that deletion
+<img width="1710" alt="image" src="https://github.com/user-attachments/assets/275f74ca-14da-409f-bc75-f9e6ad76e1f6" />
+4. Go to Lambda
+       Click `Functions`
+       Select `email_reminder_lambda`
+       Click `Actions`
+       Select `Delete`
+       Confirm that deletion
+       Repeat the same steps for `api_lambda`
+5. Go to Step Functions
+       Select `State machines`
+       Select `PetCuddleOTron`
+       Click `Delete`
+       Confirm the deletion
+6. Move to CloudFormation
+       Select `LAMBDAROLE` stack
+       Click `Delete`
+       Repeat the same steps for `StackMachineRole`
+   <img width="1450" alt="image" src="https://github.com/user-attachments/assets/4490e01a-b103-410b-b329-0f9ed8758930" />
+
+
 
 
 #### Credits
