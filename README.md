@@ -1,10 +1,10 @@
-# Pet-Cuddle-o-Tron
+# Pawfect Reminders: An AWS Serverless Reminder App
 ![alt text](Images/UpdatedImages/image-11.png)
 
 
 ### Description
 
-The Pet-Cuddle-o-Tron application is designed to send automated emails reminding pet owners to cuddle their pets. Users can set a countdown timer and a custom message, and the application will handle the rest. This project is perfect for learning how to build serverless applications using AWS, integrating Simple Email Service (SES), Lambda functions, Step Functions, API Gateway, and S3.
+The `Pawfect Reminders: An AWS Serverless Reminder App` application is designed to send automated emails reminding pet owners to cuddle their pets. Users can set a countdown timer and a custom message, and the application will handle the rest. This project is perfect for learning how to build serverless applications using AWS, integrating Simple Email Service (SES), Lambda functions, Step Functions, API Gateway, and S3.
 
 ### Features
 
