@@ -436,7 +436,7 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
 2. If you still encounter the same error in `Firefox`, try reopening the S3 static website link in `another browser`.
 ![alt text](Images/UpdatedImages/image-16.png)
 
-# Conclusion
+## Conclusion
 
 The `Pawfect Reminder Application` demonstrates the power of serverless architecture by leveraging AWS services to deliver automated, customizable reminders for pet owners. By integrating `AWS Simple Email Service (SES)`, `Lambda`, `Step Functions`, `API Gateway`, and `S3`, this project provides a seamless and scalable solution for sending timely pet care reminders.
 
@@ -444,7 +444,7 @@ Through this project, we explored the practical implementation of AWS services, 
 
 
 
-### CleanUp
+## CleanUp
 
 1. Go to S3
        Select the bucket,
@@ -481,6 +481,6 @@ Through this project, we explored the practical implementation of AWS services, 
 
 
 
-#### Credits
+**Credits:**
 
 *This project is based on the AWS Serverless Pet-Cuddle-o-Tron tutorial from the Solutions Architect Professional course by Adrian Cantrill. Their comprehensive guides and learning resources have been instrumental in the development of this application.*
