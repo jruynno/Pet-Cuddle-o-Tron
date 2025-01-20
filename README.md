@@ -386,8 +386,12 @@ The `Pawfect Reminders: An AWS Serverless Reminder App` application is designed 
         * To test the application Enter an amount of time until the next cuddle. For example, `120` seconds
         * Enter a message,  `HUMAN COME HOME NOW`
         * Then enter the PetCuddleOTron Customer Address in the email box, this is the email which you verified right at the start as the customer for this application.
-    
-## TEST
+
+# OUTPUT
+CONGRATULATIONS!
+![alt text](Images/UpdatedImages/image-11.png)
+
+## TESTING
 * before you do the next step and click the button on the application, if you want to see how the application works do the following
     * open a new tab to the Step functions console `https://console.aws.amazon.com/states/home?region=us-east-1#/statemachines`
     * Click on `PetCuddleOTron`
@@ -402,13 +406,6 @@ The `Pawfect Reminders: An AWS Serverless Reminder App` application is designed 
     * Message: `HUMAN COME HOME NOW!!!`
     * Email: enter the **2nd Email address: TO**: `ynnoriveracloud+cuddlecustomer@gmail.com`
     * Click `Email Minion` button
-
-
-
-
-# OUTPUT
-CONGRATULATIONS!
-![alt text](Images/UpdatedImages/image-11.png)
 
 
 * Got back to the `Step functions console` make sure the `Executions` Tab is selected 
@@ -439,9 +436,15 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
 2. If you still encounter the same error in `Firefox`, try reopening the S3 static website link in `another browser`.
 ![alt text](Images/UpdatedImages/image-16.png)
 
+# Conclusion
+
+The `Pawfect Reminder Application` demonstrates the power of serverless architecture by leveraging AWS services to deliver automated, customizable reminders for pet owners. By integrating `AWS Simple Email Service (SES)`, `Lambda`, `Step Functions`, `API Gateway`, and `S3`, this project provides a seamless and scalable solution for sending timely pet care reminders.
+
+Through this project, we explored the practical implementation of AWS services, gained experience with serverless workflows, and developed a user-friendly frontend for managing reminders. Whether you're looking to enhance your skills in cloud computing or build a practical application for pet owners, this project offers a comprehensive learning experience.
 
 
-## CleanUp
+
+### CleanUp
 
 1. Go to S3
        Select the bucket,
@@ -475,11 +478,6 @@ Watch the graphic .. see how the Timer state is highlighted The step function is
        Repeat the same steps for `StackMachineRole`
    <img width="1450" alt="image" src="https://github.com/user-attachments/assets/4490e01a-b103-410b-b329-0f9ed8758930" />
 
-# Conclusion
-
-The `Pawfect Reminder Application` demonstrates the power of serverless architecture by leveraging AWS services to deliver automated, customizable reminders for pet owners. By integrating `AWS Simple Email Service (SES)`, `Lambda`, `Step Functions`, `API Gateway`, and `S3`, this project provides a seamless and scalable solution for sending timely pet care reminders.
-
-Through this project, we explored the practical implementation of AWS services, gained experience with serverless workflows, and developed a user-friendly frontend for managing reminders. Whether you're looking to enhance your skills in cloud computing or build a practical application for pet owners, this project offers a comprehensive learning experience.
 
 
 
